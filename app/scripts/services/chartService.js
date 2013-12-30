@@ -2,8 +2,6 @@
 
 angular.module('hpsApp')
     .service('Chartservice', ['$http', '$q', function ($http, $q) {
-        // AngularJS will instantiate a singleton by calling "new" on this function
-
         var stream_index = function (d, i) {
             return {x: i, y: Math.max(0, d)};
         };
@@ -29,13 +27,26 @@ angular.module('hpsApp')
             });
         };
 
-        this.testData = function () {
+        var getPoints = function () {
             return stream_layers(3, 128, 0.1).map(function (data, i) {
                 return {
                     key: 'Stream' + i,
                     values: data
                 };
             });
+        };
+
+        this.testData = function () {
+            var deferred = $q.defer();
+            $http.get('/api/chart').
+                success(function(data) {
+                    deferred.resolve({points: getPoints()});
+                }).
+                error(function(error){
+                    deferred.resolve({message: 'Sorry, error occurred while signing up, please try again.'});
+                });
+
+            return deferred.promise;
         };
 
     }]);

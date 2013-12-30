@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hpsApp')
-    .service('chartservice', ['$http', function ($http) {
+    .service('Chartservice', ['$http', '$q', function ($http, $q) {
         // AngularJS will instantiate a singleton by calling "new" on this function
 
         var stream_index = function (d, i) {

@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('hpsApp')
-    .controller('ChartCtrl', ['$scope', 'chartservice', function ($scope, chartservice) {
+    .controller('ChartCtrl', ['$scope', 'Chartservice', function ($scope, chartservice) {
         var chart;
 
         $scope.refreshData = function () {
             d3.select('#chart svg')
-                .datum(chartservice.testData());
+              .datum(chartservice.testData());
 
             chart.update();
         };

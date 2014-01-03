@@ -11,7 +11,7 @@ angular.module('hpsApp')
                     deferred.resolve(data);
                 }).
                 error(function(error){
-                    deferred.resolve({message: 'Sorry, error occurred while signing up, please try again.'});
+                    deferred.reject({message: 'Sorry, error occurred while getting data, please try again.'});
                 });
 
             return deferred.promise;

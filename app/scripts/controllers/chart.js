@@ -29,6 +29,8 @@ angular.module('hpsApp')
                     .datum(data.points);
 
                 chart.update();
+            }).catch(function (error) {
+                console.log(error.message);
             });
         };
 

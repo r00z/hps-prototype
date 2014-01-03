@@ -27,10 +27,10 @@
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <div class="header">
+    <div class="header" ng-controller="NavbarController">
       <ul class="nav nav-pills pull-right">
-        <li class="active"><a ng-href="#">Home</a></li>
-        <li><a ng-href="#/chart">Chart</a></li>
+        <li ng-class="{active: routeIs('/')}"><a ng-href="#">Home</a></li>
+        <li ng-class="{active: routeIs('/chart')}"><a ng-href="#/chart">Chart</a></li>
       </ul>
       <h3 class="text-muted">hps prototype</h3>
     </div>
@@ -39,7 +39,7 @@
     <div class="container" ng-view=""></div>
 
     <div class="footer">
-      <p>? from the Yeoman team</p>
+      <p>(c) D square N.V.</p>
     </div>
 
     <script src="bower_components/jquery/jquery.min.js"></script>
@@ -61,6 +61,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/chart.js"></script>
         <script src="scripts/services/chartService.js"></script>
+        <script src="scripts/controllers/navigation.js"></script>
         <!-- endbuild -->
 </body>
 </html>

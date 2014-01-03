@@ -12,7 +12,8 @@ describe('Controller: ChartCtrl', function () {
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     ChartCtrl = $controller('ChartCtrl', {
-      $scope: scope
+      $scope: scope,
+      Chartservice: {}
     });
   }));
 

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hpsApp')
-    .service('Chartservice', ['$http', '$q', function ($http, $q) {
+    .service('Chartservice', function ($http, $q) {
 
         this.testData = function () {
             var deferred = $q.defer();
@@ -16,4 +16,4 @@ angular.module('hpsApp')
 
             return deferred.promise;
         };
-    }]);
+    });

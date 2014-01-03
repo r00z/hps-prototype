@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('hpsApp')
-    .controller('ChartCtrl', ['$scope', 'Chartservice', function ($scope, chartservice) {
+    .controller('ChartCtrl', function ($scope, Chartservice) {
         var chart = nv.models.lineWithFocusChart();
 
         nv.addGraph(function () {
@@ -24,7 +24,7 @@ angular.module('hpsApp')
         });
 
         $scope.refreshData = function () {
-            chartservice.testData().then(function (data) {
+            Chartservice.testData().then(function (data) {
                 d3.select('#chart svg')
                     .datum(data.points);
 
@@ -33,4 +33,4 @@ angular.module('hpsApp')
         };
 
         $scope.refreshData();
-    }]);
+    });

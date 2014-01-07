@@ -2,7 +2,8 @@
 
 angular.module('hpsApp', [
         'ngRoute',
-        'ngMockE2E'
+        'ngMockE2E',
+        'ui.bootstrap'
     ])
     .config(function ($routeProvider) {
         $routeProvider

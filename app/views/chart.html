@@ -1,4 +1,37 @@
-<p>This is the chart view.</p>
+<div class="row">
+    <div class="col-md-6">
+        <p class="input-group">
+          <input type="text" class="form-control"
+                 datepicker-popup="{{format}}"
+                 ng-model="dt"
+                 is-open="opened" min="minDate" max="'2015-06-22'"
+                 datepicker-options="dateOptions"
+                 show-button-bar="false"
+                 ng-required="true"
+                 show-weeks="false"
+                 close-text="Close" />
+          <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+    </div>
+    <div class="col-md-6">
+        <p class="input-group">
+          <input type="text" class="form-control"
+                 datepicker-popup="{{format}}"
+                 ng-model="dt2"
+                 is-open="opened2" min="minDate" max="'2015-06-22'"
+                 datepicker-options="dateOptions"
+                 show-button-bar="false"
+                 ng-required="true"
+                 show-weeks="false"
+                 close-text="Close" />
+          <span class="input-group-btn">
+            <button class="btn btn-default" ng-click="open2($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>
+    </div>
+</div>
 
 <div id="chart" class='with-3d-shadow with-transitions'>
     <svg style="height: 500px;"></svg>
